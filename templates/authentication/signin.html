@@ -10,6 +10,33 @@
 <body>
     <div class="container">
         <p><h1>Sign In</h1></p>
+        <form action="/sign-in/" method="post">
+
+            {% csrf_token %}
+                <div class="row">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Username"
+                        required
+                    />
+                </div>
+
+                <div class="row">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="password"
+                        required
+                    />
+                </div>
+
+                <button type="submit">Sign In</button>
+        </form>
     </div>
 </body>
 </html>
