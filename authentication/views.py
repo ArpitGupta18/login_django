@@ -16,7 +16,6 @@ def sign_up(request):
         last_name = request.POST['lastname']
         email = request.POST['email']
         password = request.POST['password']
-        confirm_password = request.POST['confirm-password']
 
         myuser = User.objects.create_user(username, email, password)
         myuser.first_name = first_name
@@ -26,7 +25,7 @@ def sign_up(request):
 
         messages.success(request, "Your Account has been successfully created.")
 
-        return redirect('sign-in')
+        return redirect('home')
 
     return render(request, 'authentication/signup.html')
 
