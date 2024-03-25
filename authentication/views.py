@@ -44,7 +44,7 @@ def sign_in(request):
             return render(request, 'authentication/index.html', {'first_name': first_name})
         
         else:
-            messages.warning(request, "Your username or password was incorrect!")
+            messages.error(request, "Your username or password was incorrect!")
             return redirect('home')
 
     return render(request, 'authentication/signin.html')
